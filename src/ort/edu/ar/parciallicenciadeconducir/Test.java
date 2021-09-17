@@ -8,7 +8,6 @@ public class Test {
 
 		Persona p = new Persona(null, null, null);
 		Persona p1 = new Persona(null, null, null);
-	
 
 		Vehiculo v = new Moto("01", "Peugot", 200, true);
 		Vehiculo v1 = new Moto("01", "Peugot", 200, true);
@@ -30,14 +29,14 @@ public class Test {
 		listaCircuitos1.add(new Circuito(360, 3));
 		Circuito c5 = new Circuito(81, 0);
 
-		Examen em = new ExamenDeMoto("0102", p, listaCircuitos,v);
-		Examen em1 = new ExamenDeMoto("0202", p1, listaCircuitos1,v1);
+		Examen em = new ExamenDeMoto("0102", p, listaCircuitos, v);
+		Examen em1 = new ExamenDeMoto("0202", p1, listaCircuitos1, v1);
 
-		Examen ea = new ExamenDeAuto("0402", c4,v3);
-		Examen ea1 = new ExamenDeAuto("0502", c5,v4);
-		Examen ea2 = new ExamenDeAuto("0503", c5,v4);
-		Examen ea4 = new ExamenDeAuto("0405", c4,v3);
-		
+		Examen ea = new ExamenDeAuto("0402", c4, v3);
+		Examen ea1 = new ExamenDeAuto("0502", c5, v4);
+		Examen ea2 = new ExamenDeAuto("0503", c5, v4);
+		Examen ea4 = new ExamenDeAuto("0405", c4, v3);
+
 		sede.agregarExamen(em);
 		sede.agregarExamen(em1);
 
@@ -45,10 +44,9 @@ public class Test {
 		sede.agregarExamen(ea1);
 		sede.agregarExamen(ea2);
 		sede.agregarExamen(ea4);
-		
 
 		sede.mostrarExamenes();
-		
+
 		System.out.println(sede.obtenerInforme());
 	}
 

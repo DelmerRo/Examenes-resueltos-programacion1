@@ -24,39 +24,38 @@ public class ExamenDeMoto extends Examen {
 
 	@Override
 	public boolean aprobo() {
-		if(v.getCilindrada()>TOPE_CILINDRADA && this.aproboCircuito()) {
-			
+		if (v.getCilindrada() > TOPE_CILINDRADA && this.aproboCircuito()) {
+
 		}
 		return false;
 	}
 
 	private boolean aproboCircuito() {
-		int i=0;
-		boolean aprobo=false;
-		if(this.v.getCilindrada()>TOPE_CILINDRADA) {
-			aprobo=this.cantCircuitosDesaprobados()==this.circuitos.size();
-		}else
-		aprobo=this.cantCircuitosDesaprobados()<=1 && this.tiempoTotal()<TOPE_MAX;
+		boolean aprobo = false;
+		if (this.v.getCilindrada() > TOPE_CILINDRADA) {
+			aprobo = this.cantCircuitosDesaprobados() == this.circuitos.size();
+		} else
+			aprobo = this.cantCircuitosDesaprobados() <= 1 && this.tiempoTotal() < TOPE_MAX;
 		return aprobo;
 	}
 
 	private int tiempoTotal() {
-		int tiempoTotal=0;
+		int tiempoTotal = 0;
 		for (Circuito circuito : circuitos) {
-			tiempoTotal+=circuito.getTiempoEnSegundos();
+			tiempoTotal += circuito.getTiempoEnSegundos();
 		}
 		return tiempoTotal;
 	}
 
 	private int cantCircuitosDesaprobados() {
-		int cant=0;
+		int cant = 0;
 		for (Circuito circuito : circuitos) {
-			if(!circuito.aprobo()) {
+			if (!circuito.aprobo()) {
 				cant++;
 			}
-			
+
 		}
 		return cant;
 	}
-	
+
 }
